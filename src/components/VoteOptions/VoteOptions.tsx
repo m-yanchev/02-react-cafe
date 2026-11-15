@@ -1,6 +1,6 @@
-import css from "./VoteOptions.module.css";
-import clsx from "clsx";
-import type { VoteType } from "../../types/votes";
+import css from './VoteOptions.module.css';
+import clsx from 'clsx';
+import type { VoteType } from '../../types/votes';
 
 interface VoteOptionsProps {
   onVote: (type: VoteType) => void;
@@ -8,26 +8,19 @@ interface VoteOptionsProps {
   canReset: boolean;
 }
 
-export default function VoteOptions({
-  onVote,
-  onReset,
-  canReset,
-}: VoteOptionsProps) {
+export default function VoteOptions({ onVote, onReset, canReset }: VoteOptionsProps) {
   return (
     <div className={css.container}>
-      <button className={css.button} onClick={() => onVote("good")}>
+      <button className={css.button} onClick={() => onVote('good')}>
         Good
       </button>
-      <button className={css.button} onClick={() => onVote("neutral")}>
+      <button className={css.button} onClick={() => onVote('neutral')}>
         Neutral
       </button>
-      <button className={css.button} onClick={() => onVote("bad")}>
+      <button className={css.button} onClick={() => onVote('bad')}>
         Bad
       </button>
-      <button
-        onClick={onReset}
-        className={clsx(css.button, css.reset, !canReset && "hidden")}
-      >
+      <button onClick={onReset} className={clsx(css.button, css.reset, !canReset && 'hidden')}>
         Reset
       </button>
     </div>
